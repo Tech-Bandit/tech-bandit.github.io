@@ -7,6 +7,7 @@ Blue Team Defense Notes
 ### Secure setup 
 
 ##### Install and setup
+
 1) Packages and Repositories
 	`sudo apt-get update && sudo apt-get upgrade -y`
 2) Configure Unattended-Upgrade
@@ -18,6 +19,7 @@ Blue Team Defense Notes
 	`\\Unattended-Upgrade::Automatic-Reboot "false";`
 
 ##### SSH with Ed25519 keys
+
 1) Packages Install
 	`sudo apt-get install openssh-server`
 2) Check if sshd is running
@@ -26,6 +28,7 @@ Blue Team Defense Notes
 	`sudo sshd status`
 
 ##### Check what keys you have (If any)
+
 1) List all your keys
 	`for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 2) Check below 
@@ -40,13 +43,19 @@ Blue Team Defense Notes
 | Ed25519       | Amazing!     |
 
 ##### Upgrade your SSH keys to Ed25519 
+
 1) Start by creating a new user and authorizing SSH-based access for an SSH key pair.
+    <html>
+      <head>
 	```sh
 	sudo adduser <auser>
 	sudo usermod -aG sudo <asuser> 
 	mkdir ${HOME}/.ssh
 	chmod 700 ~/.ssh
 	```
+      </head>
+    </html>
+    
 2) Create Ed25519 key
 	`cd ~/.ssh`
 	`ssh-keygen -o -a 100 -t ed25519 -f id_ed # Your public key has been saved in id_ed.pub`
@@ -69,3 +78,4 @@ Blue Team Defense Notes
 	```
 5) Restart ssh
 	`sudo systemctl restart ssh`
+
