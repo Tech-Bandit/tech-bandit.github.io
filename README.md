@@ -29,6 +29,7 @@ Blue Team Defense Notes
 1) List all your keys
 	`for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 2) Check below 
+
 | **Type**      | **Security** |
 |---------------|--------------|
 | DSA           | Unsafe!      |
