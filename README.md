@@ -96,5 +96,6 @@ Blue Team Defense Notes
 	PasswordAuthentication no
 	```
 5) Restart ssh
+
 	`sudo systemctl restart ssh`
 
