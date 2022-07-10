@@ -1,7 +1,7 @@
 ##### Upgrade your SSH keys to Ed25519 
 
 1) Start by creating a new user and authorizing SSH-based access for an SSH key pair.
-```html
+
     <html>
       <head>
 	sudo adduser <auser>
@@ -10,7 +10,7 @@
 	chmod 700 ~/.ssh
       </head>
     </html>
-```
+
 2) Create Ed25519 key
 	`cd ~/.ssh`
 	`ssh-keygen -o -a 100 -t ed25519 -f id_ed # Your public key has been saved in id_ed.pub`
