@@ -14,36 +14,36 @@ Blue Team Defense Notes
 
 2) Configure Unattended-Upgrade
 
-	`sudo apt install unattended-upgrades`
-	`sudo dpkg-reconfigure --priority=low unattended-upgrades`
+	sudo apt install unattended-upgrades
+	sudo dpkg-reconfigure --priority=low unattended-upgrades
 
 3) Disable Automatic Reboots
 
-	`sudo nano /etc/apt/apt.conf.d/50unattended-upgrades`
+	sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 	
 4) Uncomment the line below 
 
-	`\\Unattended-Upgrade::Automatic-Reboot "false";`
+	\\Unattended-Upgrade::Automatic-Reboot "false";
 
 ##### SSH with Ed25519 keys
 
 1) Packages Install
 
-	`sudo apt-get install openssh-server`
+	sudo apt-get install openssh-server
 
 2) Check if sshd is running
 
-	`sudo systemctl status sshd`
+	sudo systemctl status sshd
 
 	or 
 
-	`sudo sshd status`
+	sudo sshd status
 
 ##### Check what keys you have (If any)
 
 1) List all your keys
 
-	`for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
+	for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq
 
 2) Check below 
 
@@ -76,15 +76,15 @@ Blue Team Defense Notes
 	```
 3) Copy the public key from the client and head back on the server 
 
-	`echo "your-public-key" >> ~/.ssh/authorized_keys`
+	echo "your-public-key" >> ~/.ssh/authorized_keys
 
 4) Back on the client
 
-	`ssh -i ${HOME}/.ssh/id_ed <serveruser>@192.168.50.45` 
+	ssh -i ${HOME}/.ssh/id_ed <serveruser>@192.168.50.45
 
 5) Disable root login and password authentication 
 
-	`sudo nano /etc/ssh/sshd_config`
+	sudo nano /etc/ssh/sshd_config
 
 	- Change the two lines below to match
 
@@ -97,5 +97,5 @@ Blue Team Defense Notes
 	```
 5) Restart ssh
 
-	`sudo systemctl restart ssh`
+	sudo systemctl restart ssh
 
