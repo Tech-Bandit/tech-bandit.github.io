@@ -43,6 +43,7 @@ You can also use AngryIPScanner
 
 2. Locate the channel 
 > By checking the top part of the output and match the newley found BSSID. 
+
 ![SSID](./assets/SSID.png)
 
 3. Gathered info so far:
