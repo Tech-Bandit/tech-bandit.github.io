@@ -23,7 +23,23 @@ In this test I wanted to see if Blink cameras are vulnerable to jamming and caus
 
 ### Setup 
 You'll need the BSSID of the Blink Sync Module, I am on the same network and Identiffied the IP and MAC of it. Blink is a Amazon product so looking up this mac address brings back this info,
-[Mac Address Lookup Site](maclookup.app)
+[Mac Address Lookup Site](https://maclookup.app)
 **Amazon Technologies Inc.**
 You can also use AngryIPScanner
 ![IP](./assets/Scanned_IP.png)
+
+### Enable monitor mode 
+1. Check for conflicting proccesses 
+`airmon-ng check kill`
+2. Start the adapter in monitor mode
+`sudo airmon-ng start wlan0`
+[Monitor](./assets/MonitorMode.png)
+
+### Find target 
+With `airodump-ng -w output_scan wlan0`
+Looking in the *STATION* section for the Mac address, we can match the corrisponding **ESSID**, to find it easier we can output to a file using -w argument. Open the output file. 
+[BSSID[(./assets/BSSID.png)
+| MAC | BSSID |
+|-----|-----|
+|74:EC:B2:41:4B:61|E8:9F:80:12:5C:77  |
+
