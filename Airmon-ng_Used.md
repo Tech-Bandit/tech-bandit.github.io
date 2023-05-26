@@ -40,12 +40,10 @@ You can also use AngryIPScanner
 > Looking in the *STATION* section for the Mac address, we can match the corrisponding **ESSID**, to find it easier we can output to a file using -w argument. Open the output file.
 
 ![BSSID](./assets/BSSID.png)
-
 2. Locate the channel 
 > By checking the top part of the output and match the newley found BSSID. 
 
 ![SSID](./assets/SSID.png)
-
 3. Gathered info so far:
 
 | HOSTNAME| IP|MAC |  BSSID | CH |
