@@ -79,7 +79,7 @@ PasswordAuthentication no
 
 **Creating a SSH keypai**
 You can use this script to automate the key creation part on a newly imaged linux machine. 
-```BASH
+```sh
 #!/bin/bash
 
 # Check if SSH key pair exists
@@ -95,7 +95,7 @@ fi
 However this does not work if the machine does not already have OpenSSH installed for the command `ssh-keygen` to work.
 So I needed to adjust the script to check for OpenSSH installition.
 
-```BASH
+```sh
 #!/bin/bash
 
 # Check if OpenSSH is installed 
