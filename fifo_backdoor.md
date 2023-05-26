@@ -27,6 +27,7 @@ Connect to this backdoor
 
 Analyze the backdoor
 1. Open another tab on the original machine to analyse the backdoor connection using`lsof -i -P`
+
 |Flag       |Define       |
 | ----  | ----  |
 |-i       |Looking at the open Internet connections.|
