@@ -38,10 +38,11 @@ You can also use AngryIPScanner
 ### Find target 
 1. Run `airodump-ng -w output_scan wlan0`
 > Looking in the *STATION* section for the Mac address, we can match the corrisponding **ESSID**, to find it easier we can output to a file using -w argument. Open the output file.
+
 ![BSSID](./assets/BSSID.png)
 
 2. Now locate the channel that this is on by checking the top part of the output and match the newley found BSSID. 
-![SSID](.assets/SSID.png)
+![SSID](./assets/SSID.png)
 
 3. Gathered info so far:
 
