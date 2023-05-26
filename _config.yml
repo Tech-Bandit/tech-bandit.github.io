@@ -1,5 +1,7 @@
-remote_theme: pages-themes/leap-day@v0.2.0
+remote_theme: pages-themes/primer@v0.6.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title: [The title of your site]
-description: [A short description of your site's purpose]
+- jekyll-feed
+- jekyll-seo-tag
+title: Security Systems and Notes
+description: Notes for configurations and guides I've used.
