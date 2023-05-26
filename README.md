@@ -10,7 +10,7 @@ Blue Team Defense Notes
 
 1) Packages and Repositories
 
-	`sudo apt-get update && sudo apt-get upgrade -y`
+	sudo apt-get update && sudo apt-get upgrade -y
 
 2) Configure Unattended-Upgrade
 
