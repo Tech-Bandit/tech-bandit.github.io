@@ -43,6 +43,7 @@ You can also use AngryIPScanner
 > By checking the top part of the output and match the newley found BSSID. 
 ![SSID](./assets/SSID.png)
 3. Gathered info so far:
+
 | HOSTNAME| IP|MAC |  BSSID | CH |
 | ---- | ----- | ----| ---| --- |
 |blink-sync-module | 192.168.1.154| 74:EC:B2:41:4B:61| E8:9F:80:12:5C:77 | 11 |
