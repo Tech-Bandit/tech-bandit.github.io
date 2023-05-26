@@ -73,4 +73,49 @@ PasswordAuthentication no
 6. Restart ssh
 `sudo systemctl restart ssh`
 
+* * *
+
+## Automate with BASH Scripting
+
+**Creating a SSH keypai**
+You can use this script to automate the key creation part on a newly imaged linux machine. 
+```BASH
+#!/bin/bash
+
+# Check if SSH key pair exists
+if [[ -f ~/.ssh/id_rsa && -f ~/.ssh/id_rsa.pub ]]; then
+    echo "SSH key pair already exists."
+else
+    echo "Generating SSH key pair..."
+    ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+    echo "SSH key pair generated."
+fi
+```
+
+However this does not work if the machine does not already have OpenSSH installed for the command `ssh-keygen` to work.
+So I needed to adjust the script to check for OpenSSH installition.
+
+```BASH
+#!/bin/bash
+
+# Check if OpenSSH is installed 
+if ! command -v ssh >/dev/null 2>&1; then 
+	echo "OpenSSH is not installed. Installing..." 
+	apt-get update 
+	apt-get install openssh-client -y 
+	echo "OpenSSH installed." 
+else 
+	echo "OpenSSH is already installed." 
+fi
+```
+
+**Copy keys to another server.**
+`ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.1.177`
+
+**For Esxi I needed to do it this way**
+The location of the keys are in a different location then usual
+```
+cat ~/.ssh/id_rsa.pub | ssh root@10.1.1.11 'cat >> /etc/ssh/keys-root/authorized_keys' 
+```
+
 [Back](./)
