@@ -20,14 +20,14 @@ The third is where we will be running our analysis.
 > In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session. It then takes the output of the bash session and puts it back into the netcat listener.
 
 **Machine 2**
+
 Connect to this backdoor
-1. Get IP address info
-`ip add`
-2. Run netcat on the IP + Port
-`nc 172.20.146.40 2222`
+1. Get IP address info `ip add`
+2. Run netcat on the IP + Port `nc 172.20.146.40 2222`
 
 **Machine 1**
-Open another tab on the original machine to analyse the backdoor connection
+
+Open another tab on the original machine to analyse the backdoor connection using
 `lsof -i -P`
 
 |Flag       |Define       |
