@@ -6,42 +6,35 @@ layout: default
 
 **Install and setup**
 
-1) Packages and Repositories
-
-	sudo apt-get update && sudo apt-get upgrade -y
-
-2) Configure Unattended-Upgrade
-
-	sudo apt install unattended-upgrades
-	sudo dpkg-reconfigure --priority=low unattended-upgrades
-
-3) Disable Automatic Reboots
-
-	sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
-	
-4) Uncomment the line below 
-
-	\\Unattended-Upgrade::Automatic-Reboot "false";
+1. Update Packages and Repositories
+`sudo apt-get update && sudo apt-get upgrade -y`
+2. Configure Unattended-Upgrade
+`sudo apt install unattended-upgrades`
+`sudo dpkg-reconfigure --priority=low unattended-upgrades`
+3. Disable Automatic Reboots
+`sudo nano /etc/apt/apt.conf.d/50unattended-upgrades`
+4. Uncomment the line below 
+`\\Unattended-Upgrade::Automatic-Reboot "false";`
 
 **SSH with Ed25519 keys**
 
 1) Packages Install
 
-	sudo apt-get install openssh-server
+	`sudo apt-get install openssh-server`
 
 2) Check if sshd is running
 
-	sudo systemctl status sshd
+	`sudo systemctl status sshd`
 
 	or 
 
-	sudo sshd status
+	`sudo sshd status`
 
 **Check what keys you have (If any)**
 
 1) List all your keys
 
-	for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq
+	`for keyfile in ~/.ssh/id_*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 
 2) Check below 
 
