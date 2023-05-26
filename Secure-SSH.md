@@ -3,7 +3,7 @@ layout: default
 ---
 [Back](./)
 
-## Fresh Servr Config
+## Fresh Server Config
 
 **Install and setup**
 
