@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+[Back](./)
 
 ## Fresh Servr Config
 
@@ -90,4 +91,4 @@ layout: default
 
     sudo systemctl restart ssh
 
-[back](./)
+[Back](./)
