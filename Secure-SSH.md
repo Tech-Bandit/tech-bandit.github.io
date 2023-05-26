@@ -114,7 +114,7 @@ fi
 
 **For Esxi I needed to do it this way**
 The location of the keys are in a different location then usual
-```
+```sh
 cat ~/.ssh/id_rsa.pub | ssh root@10.1.1.11 'cat >> /etc/ssh/keys-root/authorized_keys' 
 ```
 
