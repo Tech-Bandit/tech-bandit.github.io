@@ -33,8 +33,9 @@ COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 nc        1757            root    3u  IPv4  48020      0t0  TCP *:2222 (LISTEN)
 nc        1757            root    4u  IPv4  48021      0t0  TCP 172.20.146.40:2222->172.20.146.40:45500 (ESTABLISHED)
 ```
-|Flag |Define  |
-| ----  | ----  |
+
+| Flag        | Defined          |
+|:-------------|:------------------|
 |-i       |Looking at the open Internet connections.|
 |-P       |Telling lsof to not guess what the service is on the ports. Just give us the port number.|
 |-p       |List open files associated with the listed process ID.|
