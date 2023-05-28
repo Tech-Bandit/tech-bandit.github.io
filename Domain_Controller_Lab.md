@@ -26,3 +26,20 @@ Create the proper Port Groups for each of the VLAN network like below. Later the
 | ISP (External) | 0 |
 
 ![PortGroup](./assets/PortGroup.png)
+
+## PfSense Requirements
+Create a Pfsense VM and add these networks 
+![[Pfsense.png]]
+Create Interface Assignments and enable DHCP on all of the Interfaces. Later we will make it also assign the DC's as the DNS resolver.
+
+| Network | Address | DNS |
+|:----|:----|:----|
+| WAN | 192.168.1.200/24 | DHCP (Default) | 
+| LAN | 172.16.1.100/24 |  | Router (Default) |
+| CLIENT | 172.16.10.100/24 | 172.16.1.10 (AD-DC) |
+| SERVER | 72.16. 11.100/24 | Router (Default) |
+
+
+
+
+
