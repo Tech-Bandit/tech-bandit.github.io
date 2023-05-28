@@ -41,14 +41,26 @@ Create Interface Assignments and enable DHCP on all of the Interfaces. Later we 
 | CLIENT | 172.16.10.100/24 | 172.16.1.10 (AD-DC) |
 | SERVER | 72.16. 11.100/24 | Router (Default) |
 
+### Create Alliases
+
 IP Address Alias For range of private IP address also known as **RFC1918**. This will make creating firewall rules a lot simpler to achieve network isolation. 
+
 > Firewall -> Aliases -> IP Add -> Name: RFC1918
-> 
 >  | IP | CIDR | 
 >  |:----|:----|
 >  |  192.168.0.0 |  16    | 
 >  |  172.16.0.0   |   12  | 
 >  |  10.0.0.0  |  8  | 
+
+I want to have the most control over what is allowed so instead of using the allow all rule I disabled it and specifief spcific ports needed for basic internet browsing. Create an allise for ports used.
+
+> Firewall -> Alliases -> Ports Add 
+> | Port | Description | 
+>  |:----|:----|
+>  |  80 |  HTTP    | 
+>  |  443   | HTTPS  | 
+>  |  8080  | ALT/HTTPS  | 
+>  |  53    | DNS |
 
 ## Windows Server Requirements
 In this lab I'm just using the 2016 version of Windows Server. So as long as you have an ISO uploaded to your datastore, you can provision a new server to begin to configure. First we need a static Ip Address so use these settings on the adapter.
