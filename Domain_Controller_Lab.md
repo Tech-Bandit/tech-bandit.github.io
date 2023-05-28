@@ -106,8 +106,10 @@ So the way it work is The Router is in charge of handing out DHCP addresses and 
 | Allow | IPv4* | SERVER net | * | CLIENT net | * | Client Network Access |
 | Block | IPv4* | SERVER net | * | RFC1918 | * | Block RFC1918 |
 
+## Windows Client Requirements
+This machine wont need much configuration other then joining it to the domain. After that to test a login using a domaina account.
 
- 
+[Back](./)
 
 
 
