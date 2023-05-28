@@ -57,9 +57,12 @@ In this lab I'm just using the 2016 version of Windows Server. So as long as you
 - Add DNS Server 
 > DNS Forwarder configured to send DNS request from the Pfsense Router. `Set-DnsServerForwarder -IPAddress "172.168.11.100"`
 
-So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. 
+| DNS Description | Image |
+| ----------- | ----------- |
+| So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| ![DHCP](./assets/DNSdiagram.jpg) |
 
-![DHCP](./assets/DNSdiagram.jpg)
+
+
 
 
 
