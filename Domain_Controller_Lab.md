@@ -16,10 +16,10 @@ Create the proper Port Groups for each of the VLAN network like below. Later the
 
 |Port Groups | VLAN ID |
 |:----|:----|
-| LAN | 0 |
-| Server | 11 |
-| Client | 10 |
-| ALL_Trunk | 4096 |
-| ISP | 0 |
+| LAN (Internal) | 0 |
+| Server (Internal) | 11 |
+| Client (Internal) | 10 |
+| ALL_Trunk (Internal) | 4096 |
+| ISP (External) | 0 |
 
 ![[PortGroup.png]]
