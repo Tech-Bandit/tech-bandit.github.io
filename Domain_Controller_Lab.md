@@ -9,10 +9,13 @@ layout: default
 ## VMWare EXXi Requirements 
 First we need two virtual switches for **Internal** and **External** communications. 
 > Networking -> Virtual Switch -> Add standard virtual switch
-![[VMwareSwitch.png]]
+
+![VSwitch1](./assets/VMwareSwitch.png)
+
 Create the proper Port Groups for each of the VLAN network like below. Later they will be used to connect the VMs.
-![[VSwitch0.png]]
-![[VMwareSwitch1.png]]
+
+![VSwitch2](./assets/VSwitch0.png)
+![VSwitch3](./assets/VMwareSwitch1.png)
 
 |Port Groups | VLAN ID |
 |:----|:----|
@@ -22,4 +25,4 @@ Create the proper Port Groups for each of the VLAN network like below. Later the
 | ALL_Trunk (Internal) | 4096 |
 | ISP (External) | 0 |
 
-![[PortGroup.png]]
+![PortGroup](./assets/PortGroup.png)
