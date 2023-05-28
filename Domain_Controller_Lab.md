@@ -29,7 +29,9 @@ Create the proper Port Groups for each of the VLAN network like below. Later the
 
 ## PfSense Requirements
 Create a Pfsense VM and add these networks 
+
 ![pfsense](./assets/Pfsense.png)
+
 Create Interface Assignments and enable DHCP on all of the Interfaces. Later we will make it also assign the DC's as the DNS resolver.
 
 | Network | Address | DNS |
@@ -56,6 +58,7 @@ In this lab I'm just using the 2016 version of Windows Server. So as long as you
 > DNS Forwarder configured to send DNS request from the Pfsense Router. `Set-DnsServerForwarder -IPAddress "172.168.11.100"`
 
 So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. 
+
 ![DHCP](./assets/DNSdiagram.jpg)
 
 
