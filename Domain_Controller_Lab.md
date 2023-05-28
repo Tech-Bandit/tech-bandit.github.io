@@ -44,8 +44,8 @@ Create Interface Assignments and enable DHCP on all of the Interfaces. Later we 
 ### Create Alliases
 
 IP Address Alias For range of private IP address also known as **RFC1918**. This will make creating firewall rules a lot simpler to achieve network isolation. 
-
 > Firewall -> Aliases -> IP Add -> Name: RFC1918
+> 
 >  | IP | CIDR | 
 >  |:----|:----|
 >  |  192.168.0.0 |  16    | 
@@ -53,8 +53,8 @@ IP Address Alias For range of private IP address also known as **RFC1918**. This
 >  |  10.0.0.0  |  8  | 
 
 I want to have the most control over what is allowed so instead of using the allow all rule I disabled it and specifief spcific ports needed for basic internet browsing. Create an allise for ports used.
-
 > Firewall -> Alliases -> Ports Add 
+> 
 > | Port | Description | 
 >  |:----|:----|
 >  |  80 |  HTTP    | 
