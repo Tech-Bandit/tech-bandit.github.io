@@ -74,30 +74,28 @@ So the way it work is The Router is in charge of handing out DHCP addresses and 
 
 ## PfSense Firewall Rules
 
-Next is how we are going to setup network isolation. I have put my rules but this should not be copued into an production enviorment. This is just ment to set up an environment to practice using tools hands on whenever needed. 
-
+So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. 
 #### Client VLAN Firewall Rules
 
 | State| Protocol | Source | Port | Destination | Port | Description |
 | ----- |:-----| ----|  ----|  ----|  ----|  ----|
+| Allow | IPv4 ICMP | CLIENT net | * | * | * | Allow Ping |
+| Allow | IPv4 TCP/UDP | CLIENT net | * | * | Browsing | Allow Internet Browsing |
 | Allow | IPv4* | CLIENT net | * | 172.16.11.10 | * | Domain Controller Access |
-| Allow | IPv4 TCP/UDP | CLIENT net | * | * | 53 (DNS) | DNS Access |
 | Block | IPv4* | CLIENT net | * | RFC1918 | * | Block RFC1918 |
-| Allow | IPv4* | * | * | * | * | Allow All |
+
 
 #### Server VLAN Firewall Rules
 
 | State| Protocol | Source | Port | Destination | Port | Description |
 | ----- |:-----| ----|  ----|  ----|  ----|  ----|
+| Allow | IPv4 ICMP | SERVER net | * | * | * | Allow Ping |
+| Allow | IPv4 TCP/UDP | SERVER net | * | * | Browsing | Allow Internet Browsing |
 | Allow | IPv4* | SERVER net | * | CLIENT net | * | Client Network Access |
-| Allow | IPv4 TCP/UDP | SERVER net | * | * | 53 (DNS) | DNS Access |
 | Block | IPv4* | SERVER net | * | RFC1918 | * | Block RFC1918 |
-| Allow | IPv4* | * | * | * | * | Allow All |
 
 
-
-
-
+ 
 
 
 
