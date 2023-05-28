@@ -43,6 +43,7 @@ Create Interface Assignments and enable DHCP on all of the Interfaces. Later we 
 
 IP Address Alias For range of private IP address also known as **RFC1918**. This will make creating firewall rules a lot simpler to achieve network isolation. 
 > Firewall -> Aliases -> IP Add -> Name: RFC1918
+> 
 >  | IP | CIDR | 
 >  |:----|:----|
 >  |  192.168.0.0 |  16    | 
