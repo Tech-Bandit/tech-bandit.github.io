@@ -41,6 +41,14 @@ Create Interface Assignments and enable DHCP on all of the Interfaces. Later we 
 | CLIENT | 172.16.10.100/24 | 172.16.1.10 (AD-DC) |
 | SERVER | 72.16. 11.100/24 | Router (Default) |
 
+IP Address Alias For range of private IP address also known as **RFC1918**. This will make creating firewall rules a lot simpler to achieve network isolation. 
+> Firewall -> Aliases -> IP Add -> Name: RFC1918
+>  | IP | CIDR | 
+>  |:----|:----|
+>  |  192.168.0.0 |  16    | 
+>  |  172.16.0.0   |   12  | 
+>  |  10.0.0.0  |  8  | 
+
 ## Windows Server Requirements
 In this lab I'm just using the 2016 version of Windows Server. So as long as you have an ISO uploaded to your datastore, you can provision a new server to begin to configure. First we need a static Ip Address so use these settings on the adapter.
 
@@ -57,9 +65,10 @@ In this lab I'm just using the 2016 version of Windows Server. So as long as you
 - Add DNS Server 
 > DNS Forwarder configured to send DNS request from the Pfsense Router. `Set-DnsServerForwarder -IPAddress "172.168.11.100"`
 
-| DNS Description | Image |
+| Image| Description |
 | ----------- | ----------- |
-| So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| ![DHCP](./assets/DNSdiagram.jpg) |
+| ![DHCP](./assets/DNSdiagram.jpg) | So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| 
+
 
 
 
