@@ -67,7 +67,7 @@ In this lab I'm just using the 2016 version of Windows Server. So as long as you
 
 | Image| Description |
 | ----------- | ----------- |
-| ![DHCP](./assets/DNSDiagram1.jpg) | So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| 
+| ![DHCP](./assets/DNSDiagram0.jpg) | So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| 
 
 
 
