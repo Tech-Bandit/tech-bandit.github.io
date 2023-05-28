@@ -13,8 +13,8 @@ First we need two virtual switches for **Internal** and **External** communicati
 Create the proper Port Groups for each of the VLAN network like below. Later they will be used to connect the VMs.
 ![[VSwitch0.png]]
 ![[VMwareSwitch1.png]]
-|
-Port Groups | VLAN ID |
+
+|Port Groups | VLAN ID |
 |:----|:----|
 | LAN | 0 |
 | Server | 11 |
