@@ -82,11 +82,11 @@ In this lab I'm just using the 2016 version of Windows Server. So as long as you
 | ----------- | ----------- |
 | ![DHCP](./assets/DNSDiagram0.jpg) | So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. At the samee time using the pfSense router as a DNS forwarde| 
 
-So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. 
 
 ## PfSense Firewall Rules
 
-So the way it work is The Router is in charge of handing out DHCP addresses and the Domain Controller is in charge of resolving IP Addresses for the **Client** interface. 
+Im allowing the client to connect to the domain controller and allowing the server to communicate to the whole client network.
+
 #### Client VLAN Firewall Rules
 
 | State| Protocol | Source | Port | Destination | Port | Description |
@@ -107,7 +107,7 @@ So the way it work is The Router is in charge of handing out DHCP addresses and 
 | Block | IPv4* | SERVER net | * | RFC1918 | * | Block RFC1918 |
 
 ## Windows Client Requirements
-This machine wont need much configuration other then joining it to the domain. After that to test a login using a domaina account.
+This machine wont need much configuration other then joining it to the domain. After that to test a login using a domaina account. 
 
 [Back](./)
 
