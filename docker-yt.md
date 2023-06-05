@@ -9,7 +9,7 @@ Install and integrate docker desktop with WSL2
 ## Requirements
 - Install [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) from Docker Hub
 - Verify WSL2 by running ``wsl -l -v`` in **Powershell** 
-> ![Powershell-Check](/Images/pwsh_img.PNG)
+> ![Powershell-Check](./assets/pwsh_img.PNG)
 
 - Go to **Settings**->**Resouces**->**WSL Integration**->**Ubuntu**
 
@@ -42,7 +42,7 @@ Create a portainer volume for data
 > Paste this: 
 > `https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/portainer-v2.json`
 > 
-> ![Repo](Images/portainer-temp.PNG)
+> ![Repo](/assets/portainer-temp.PNG)
 > - ### Taken from this [github page](https://github.com/SelfhostedPro/selfhosted_templates)
 
 
