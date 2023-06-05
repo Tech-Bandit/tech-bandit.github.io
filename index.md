@@ -13,4 +13,4 @@ layout: default
 ### [Linux Backdoor](./fifo_backdoor.md)
 
 # YouTube Showcased Documentation
-## [Pihole](pi-hole/index.md)
+## [Pihole](./../pi-hole/index.md)
