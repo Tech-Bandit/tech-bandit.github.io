@@ -7,10 +7,8 @@ layout: default
 ## Systems Notes
 ### [Secure-SSH](./Secure-SSH.md)
 ### [Domain Controller Lab](./Domain_Controller_Lab.md)
+### [DNS Sinkhole](./pihole-yt.md)
 
 ## Cybersecurity Notes
 ### [Disrupt IP Camera](./Airmon-ng_Used.md)
 ### [Linux Backdoor](./fifo_backdoor.md)
-
-# YouTube Showcased Documentation
-## [Pihole](./../pi-hole/index.md)
